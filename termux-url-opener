@@ -35,9 +35,6 @@ if [ "$n" == '5' ]; then
 yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -f bestaudio --audio-quality 0 -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
 else
 
-
-else
-
 [ ! -d "/data/data/com.termux/files/home/storage/downloads/Youtube" ] && mkdir "/data/data/com.termux/files/home/storage/downloads/Youtube"
 yt-dlp  --extractor-args "youtube:player_client=android" -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
 fi
