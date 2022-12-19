@@ -23,13 +23,13 @@ yes | pip install youtube-dl && yes | pip install spotdl && yes | pip install yt
 
 
 #Installing the script
-wget -P /data/data/com.termux/files/home/bin/ --no-check-certificate "https://gitlab.com/anxiouslelimo/Termux_url_opener_all_in_one_downloader/-/raw/master/termux-url-opener" 
+wget -P /data/data/com.termux/files/home/bin/ --no-check-certificate "https://raw.githubusercontent.com/anxiouslelimo/Termux_URL_Downloader/master/termux-url-opener" 
 chmod +x "/data/data/com.termux/files/home/bin/termux-url-opener"
 termux-setup-storage
 ```
 Or simply run this
 ```
-wget --no-check-certificate "https://gitlab.com/anxiouslelimo/Termux_url_opener_all_in_one_downloader/-/raw/master/install.sh" && chmod +x install.sh && bash install.sh
+wget --no-check-certificate "https://raw.githubusercontent.com/anxiouslelimo/Termux_URL_Downloader/master/termux-url-opener" && chmod +x install.sh && bash install.sh
 ```
 # FAQ
 This script is blank sensitive. Therefore option "3" and "3 " are treated differently. While "3" will launch option 3, "3 " is invalid and will launch the default option.
