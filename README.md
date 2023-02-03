@@ -19,7 +19,7 @@ mkdir /data/data/com.termux/files/home/bin
 
 #Installing dependencies
 pkg update -y && pkg install wget -y && pkg install python -y && pkg install ffmpeg -y
-yes | pip install youtube-dl && yes | pip install spotdl && yes | pip install yt-dlp
+yes | pip install spotdl && yes | pip install yt-dlp
 
 
 #Installing the script
