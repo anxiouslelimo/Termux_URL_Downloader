@@ -8,6 +8,7 @@ echo "2: Download with ffmpeg(m3u8/m3u)"
 echo "3: Download with wget (Recursive)"
 echo "4: Download with spotdl (Spotify All-in-one)"
 echo "5: Download with yt-dlp and extract audio (Fixed Bandwidth Throttling by YouTube)"
+echo "6: Download with yt-dlp and extract audio with thumbnail"
 echo "Default: Download with yt-dlp (Fixed Bandwidth Throttling by YouTube)"
 read n
 
@@ -35,8 +36,14 @@ if [ "$n" == '5' ]; then
 yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -f bestaudio --audio-quality 0 -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
 else
 
+if [ "$n" == '6' ]; then
+[ ! -d "/data/data/com.termux/files/home/storage/downloads/Youtube" ] && mkdir "/data/data/com.termux/files/home/storage/downloads/Youtube"
+yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -f bestaudio --audio-quality 0 --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
+else
+
 [ ! -d "/data/data/com.termux/files/home/storage/downloads/Youtube" ] && mkdir "/data/data/com.termux/files/home/storage/downloads/Youtube"
 yt-dlp  --extractor-args "youtube:player_client=android" -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
+fi
 fi
 fi
 fi
