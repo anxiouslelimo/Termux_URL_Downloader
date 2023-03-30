@@ -38,7 +38,7 @@ else
 
 if [ "$n" == '6' ]; then
 [ ! -d "/data/data/com.termux/files/home/storage/downloads/Youtube" ] && mkdir "/data/data/com.termux/files/home/storage/downloads/Youtube"
-yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -f bestaudio --audio-quality 0 --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
+yt-dlp --extractor-args "youtube:player_client=android" -x --audio-format mp3 -f bestaudio --audio-quality 0 --embed-thumbnail -v --convert-thumbnail jpg --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"" -c -i "$url" -o "/data/data/com.termux/files/home/storage/downloads/Youtube/%(title)s.%(ext)s"
 else
 
 [ ! -d "/data/data/com.termux/files/home/storage/downloads/Youtube" ] && mkdir "/data/data/com.termux/files/home/storage/downloads/Youtube"
